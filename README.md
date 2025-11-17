@@ -5,6 +5,7 @@ A complete, structured setup of a Linux V‑Server for secure SSH access and an 
 ## Table of contents
 
 - [Overview](#overview)
+- [How to generate an SSH key](#how-to-generate-an-ssh-key)
 - [Prerequisites](#prerequisites)
 - [Step 1: SSH hardening](#step-1-ssh-hardening)
 - [Step 2: Install NGINX](#step-2-install-nginx)
@@ -21,8 +22,32 @@ This guide configures the server so SSH uses keys only, NGINX serves a custom in
 ## Prerequisites
 
 - Non‑root user with sudo on the server.
-- SSH key pair; public key available to add to authorized_keys and to GitHub.
 - Package manager access (apt) and a browser to verify the site.
+
+## How to generate an SSH key
+
+To securely access your server and use GitHub with SSH, you need an SSH key pair.  
+If you do not already have one, generate it as follows:
+
+**Command (on your client/PC, not the server!):**
+
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+- When prompted, choose a file path or simply press Enter to accept the default.
+- You can optionally set a secure passphrase.
+- Your keys will be placed in `~/.ssh/id_ed25519` (private) and `~/.ssh/id_ed25519.pub` (public).
+
+**Copy the public key to your server:**
+
+ssh-copy-id username@your.server.address
+or manually copy the contents of your `.pub` file into `~/.ssh/authorized_keys` on the server.
+
+**Add the public key to GitHub:**
+
+- Go to `Settings → SSH and GPG keys → New SSH key`, paste the contents of your public key file and save.
+
+You are now ready to continue with the next steps!
+
 
 ## Step 1: SSH hardening
 
