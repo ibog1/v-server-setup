@@ -1,6 +1,6 @@
 # v-server-setup
 
-A complete, structured setup of a Linux V‑Server for secure SSH access and an NGINX website. This document follows the checklist: each step is placed in its own section, explicit testing is described. yavsak
+A complete, structured setup of a Linux V‑Server for secure SSH access and an NGINX website. This document follows the checklist: each step is placed in its own section, explicit testing is described.
 
 ## Table of contents
 
