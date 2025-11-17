@@ -2,17 +2,17 @@
 
 A complete, structured setup of a Linux V‑Server for secure SSH access and an NGINX website. This document follows the checklist: each step is placed in its own section, explicit testing is described.
 
-## Contents
+## Table of contents
 
-- Overview
-- Prerequisites
-- Step 1: SSH hardening
-- Step 2: Install NGINX
-- Step 3: Replace default site
-- Step 4: Configure Git
-- Step 5: GitHub SSH and repository
-- Testing
-- Appendix
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Step 1: SSH hardening](#step-1-ssh-hardening)
+- [Step 2: Install NGINX](#step-2-install-nginx)
+- [Step 3: Replace default site](#step-3-replace-default-site)
+- [Step 4: Configure Git](#step-4-configure-git)
+- [Step 5: GitHub SSH and repository](#step-5-github-ssh-and-repository)
+- [Testing](#testing)
+- [Appendix](#appendix)
 
 ## Overview
 
