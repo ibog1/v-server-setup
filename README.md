@@ -29,7 +29,8 @@ This guide configures the server so SSH uses keys only, NGINX serves a custom in
 To securely access your server and use GitHub with SSH, you need an SSH key pair.  
 If you do not already have one, generate it as follows:
 
-**Command (on your client/PC, not the server!):**
+> [!NOTE]  
+> **Command (on your client/PC, not the server!):**.
 
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
