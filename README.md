@@ -63,10 +63,9 @@ Purpose: Enforce key‑only SSH, block password logins, reduce attack surface.
     - `PermitRootLogin no` (recommended)
 - Reload SSH to apply: `systemctl reload sshd`
 
-**Notes:**
-
-- Keep a second session open when changing SSH to avoid lockout.
-- Test both negative and positive cases (see Testing).
+> [!IMPORTANT]  
+> Keep a second session open when changing SSH to avoid lockout.
+> Test both negative and positive cases (see Testing).
 
 ## Step 2: Install NGINX
 
