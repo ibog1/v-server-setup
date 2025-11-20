@@ -31,6 +31,7 @@ If you do not already have one, generate it as follows:
 
 **Command (on your client/PC, not the server!):**
 
+```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
 
 - When prompted, choose a file path or simply press Enter to accept the default.
