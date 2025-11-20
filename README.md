@@ -5,8 +5,8 @@ A complete, structured setup of a Linux V‑Server for secure SSH access and an 
 ## Table of contents
 
 - [Overview](#overview)
-- [How to generate an SSH key](#how-to-generate-an-ssh-key)
 - [Prerequisites](#prerequisites)
+- [How to generate an SSH key](#how-to-generate-an-ssh-key)
 - [Step 1: SSH hardening](#step-1-ssh-hardening)
 - [Step 2: Install NGINX](#step-2-install-nginx)
 - [Step 3: Replace default site](#step-3-replace-default-site)
@@ -21,8 +21,8 @@ This guide configures the server so SSH uses keys only, NGINX serves a custom in
 
 ## Prerequisites
 
-- Non‑root user with sudo on the server.
-- Package manager access (apt) and a browser to verify the site.
+- Non‑root user with `sudo` on the server.
+- Package manager access (`apt`) and a browser to verify the site.
 
 ## How to generate an SSH key
 
@@ -34,7 +34,7 @@ If you do not already have one, generate it as follows:
 
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
-
+```
 - When prompted, choose a file path or simply press Enter to accept the default.
 - You can optionally set a secure passphrase.
 - Your keys will be placed in `~/.ssh/id_ed25519` (private) and `~/.ssh/id_ed25519.pub` (public).
