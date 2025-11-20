@@ -66,7 +66,7 @@ Purpose: Enforce key‑only SSH, block password logins, reduce attack surface.
 
 > [!IMPORTANT]  
 > Keep a second session open when changing SSH to avoid lockout.
-> Test both negative and positive cases (see Testing).
+> Test both negative and positive cases (see [Testing](#testing)).
 
 ## Step 2: Install NGINX
 
