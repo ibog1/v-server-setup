@@ -39,17 +39,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 - You can optionally set a secure passphrase.
 - Your keys will be placed in `~/.ssh/id_ed25519` (private) and `~/.ssh/id_ed25519.pub` (public).
 
-**Copy the public key to your server:**
-
-ssh-copy-id username@your.server.address
-or manually copy the contents of your `.pub` file into `~/.ssh/authorized_keys` on the server.
-
-**Add the public key to GitHub:**
-
-- Go to `Settings → SSH and GPG keys → New SSH key`, paste the contents of your public key file and save.
-
 You are now ready to continue with the next steps!
-
 
 ## Step 1: SSH hardening
 
@@ -57,7 +47,9 @@ Purpose: Enforce key‑only SSH, block password logins, reduce attack surface.
 
 **Procedure:**
 
-- Copy your public key to the server user's `authorized_keys` if not present.
+- Copy your public key to the server user's `authorized_keys` if not present:
+    - ssh-copy-id `username@your.server.address`
+    - or manually copy the contents of your `.pub` file into `~/.ssh/authorized_keys` on the server.
 - Edit SSH daemon configuration file `/etc/ssh/sshd_config`:
     - `PubkeyAuthentication yes`
     - `PasswordAuthentication no`
@@ -114,10 +106,14 @@ Purpose: Identify commits and set the default branch.
 
 Purpose: Link local repository to GitHub via SSH.
 
+> [!NOTE]
+> The following steps are an **optional guide** showing how to create and push a **test repository** (for example `v-server-setup`) after GitHub SSH is configured.  
+> If you already have a repository or use a different workflow, you can adapt or skip these commands.
+
 **Procedure:**
 
 - Ensure your SSH key is loaded (`ssh-agent` and `ssh-add`).
-- Add your public key in GitHub under Settings → SSH and GPG keys.
+- Add your public key in GitHub under `Settings → SSH and GPG keys → New SSH key`, paste the contents of your public key file and save.
 - Verify connectivity (expect "authenticated, but no shell access"):
     - `ssh -T git@github.com`
 - Create repository "v-server-setup" on GitHub (no README).
@@ -127,6 +123,7 @@ Purpose: Link local repository to GitHub via SSH.
     - `git add .`
     - `git commit -m "Initial documentation"`
     - `git push -u origin main`
+ 
 
 ## Testing
 
